@@ -74,10 +74,10 @@
         "defaults": 
         {
             "colorScheme": "One Half Dark (modded)",
-            "cursorShape": "underscore",
+            "cursorShape": "vintage",
             "font": 
             {
-                "face": "Hack NF",
+                "face": "FiraCode Nerd Font Mono",
                 "size": 14.0
             },
             "opacity": 50,
