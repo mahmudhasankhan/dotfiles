@@ -118,6 +118,12 @@ require('lazy').setup({
     dependencies = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip',
       'rafamadriz/friendly-snippets' },
   },
+  {
+    -- Autopairs
+    'windwp/nvim-autopairs',
+    event = "InsertEnter",
+    opts = {}
+  },
 
   -- Useful plugin to show you pending keybinds.
   { 'folke/which-key.nvim',          opts = {} },
@@ -146,13 +152,13 @@ require('lazy').setup({
     name = 'catppuccin',
     config = function()
       require("catppuccin").setup({
-        flavour = "frappe", -- latte, frappe, macchiato, mocha
+        flavour = "macchiato", -- latte, frappe, macchiato, mocha
         background = {
           -- :h background
           light = "latte",
           dark = "mocha",
         },
-        transparent_background = true,
+        transparent_background = false,
         show_end_of_buffer = false, -- show the '~' characters after the end of buffers
         term_colors = false,
         dim_inactive = {
@@ -350,7 +356,8 @@ vim.keymap.set('n', '<leader>tp', ':tabp<CR>')     -- go to previous tab
 -- Remap for dealing with word wrap
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
-
+-- Delete but not copy into register
+vim.keymap.set('n', 'x', '"_x')
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
