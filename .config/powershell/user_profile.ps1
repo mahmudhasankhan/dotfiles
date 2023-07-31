@@ -1,5 +1,7 @@
 # Load Prompt Config
-oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\uew.omp.json" | Invoke-Expression
+function Get-ScriptDirectory { Split-Path $MyInvocation.ScriptName }
+$PROMPT_CONFIG = Join-Path (Get-ScriptDirectory) 'uew.omp.json'
+oh-my-posh init pwsh --config $PROMPT_CONFIG | Invoke-Expression
 
 # PSReadline
 Set-PSReadlineOption -EditMode Windows

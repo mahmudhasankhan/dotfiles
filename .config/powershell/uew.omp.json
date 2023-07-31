@@ -12,7 +12,7 @@
               "display_host": true
             },
             "style": "diamond",
-            "template": "<#ffffff>\uf108</> {{ .HostName }} ",
+            "template": "<#ffffff>\uf108</>  {{ .HostName }} ",
             "type": "session"
           },
           {
@@ -31,7 +31,7 @@
           {
             "foreground": "#BFA8BF",
             "style": "powerline",
-            "template": " <#fff>\uf120</> {{ .Name }} ",
+            "template": " <#fff>\uf120</>  {{ .Name }} ",
             "type": "shell"
           }
         ],
@@ -101,7 +101,7 @@
               "style": "agnoster_full"
             },
             "style": "diamond",
-            "template": " \ue5ff {{ .Path }}",
+            "template": " \ue5ff  {{ .Path }}",
             "trailing_diamond": "",
             "type": "path"
           },
