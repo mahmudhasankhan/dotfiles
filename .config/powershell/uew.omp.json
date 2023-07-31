@@ -25,7 +25,7 @@
               "fetch_worktree_count": true
             },
             "style": "diamond",
-            "template": "<#fff>{{ .UpstreamIcon }}</>{{ .HEAD }}",
+            "template": "<#fff>{{ .UpstreamIcon }}</> {{ .HEAD }}",
             "type": "git"
           },
           {
@@ -96,7 +96,7 @@
             "leading_diamond": "<#BFA8BF>~</>",
             "properties": {
               "folder_icon": "\u002F",
-              "folder_separator_icon": " \u002F ",
+              "folder_separator_icon": "\u002F",
               "home_icon": "home",
               "style": "agnoster_full"
             },
