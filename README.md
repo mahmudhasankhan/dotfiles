@@ -1,10 +1,13 @@
 # Mahmud's dotfiles
 
-**Warning:** Don't blindly use my settings unless you know what that entails. Use at your own risk!
-
 ## Contents
 
-- Neovim config
-- Powershell config
+- [Powershell config](#Powershell)
+- [Neovim config](#Neovim)
 
-Hopefully I'll add new things in future.
+**Warning:** Don't blindly use my settings unless you know what that entails. Use at your own risk!
+
+## Powershell
+
+First create a folder named > powershell within your .config directory and cd into it. Then copy the [user_profile.ps1](https://github.com/mahmudhasankhan/dotfiles/blob/master/.config/powershell/user_profile.ps1)
+into this folder.
