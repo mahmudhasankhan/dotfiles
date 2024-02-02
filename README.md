@@ -17,3 +17,15 @@ into this folder. Afterwards, you have to reference this file to your powerhsell
 To check everything is working as it should be, open a new powershell session in your terminal and test out your commands to see if it is working or not.
 
 PS. I would highly recommend that you first go through with the [user_profile.ps1](https://github.com/mahmudhasankhan/dotfiles/blob/master/.config/powershell/user_profile.ps1) file to know what your doing.
+
+
+## Neovim
+
+First install [scoop](https://scoop.sh/) in your machine. Then install neovim and gcc with scoop.
+
+> scoop install neovim gcc
+
+This should install neovim and gcc compiler in your machine. As a prerequisite, you need to have git installed in your machine. 
+Now, for windows you need to copy the [nvim](https://github.com/mahmudhasankhan/dotfiles/tree/master/.config/nvim) folder to your `C:\Users\username\AppData\Local\`. 
+
+Finally, run nvim from your terminal and neovim will do the rest.
