@@ -1,5 +1,4 @@
 --[[
-
 =====================================================================
 ==================== READ THIS BEFORE CONTINUING ====================
 =====================================================================
@@ -123,6 +122,7 @@ require('lazy').setup({
     'windwp/nvim-autopairs',
     event = "InsertEnter",
     opts = {}
+
   },
 
   -- Useful plugin to show you pending keybinds.
@@ -147,60 +147,105 @@ require('lazy').setup({
     },
   },
 
+  -- {
+  --   'catppuccin/nvim',
+  --   lazy = false,
+  --   name = 'catppuccin',
+  --   config = function()
+  --     require("catppuccin").setup({
+  --       flavour = "frappe", -- latte, frappe, macchiato, mocha
+  --       background = {
+  --         -- :h background
+  --         light = "latte",
+  --         dark = "mocha",
+  --       },
+  --       color_overrides = {
+  --       },
+  --       transparent_background = false,
+  --       show_end_of_buffer = false, -- show the '~' characters after the end of buffers
+  --       term_colors = false,
+  --       dim_inactive = {
+  --         enabled = false,
+  --         shade = "dark",
+  --         percentage = 0.15,
+  --       },
+  --       no_italic = true,     -- Force no italic
+  --       no_bold = false,      -- Force no bold
+  --       no_underline = false, -- Force no underline
+  --       styles = {
+  --         comments = {},
+  --         conditionals = {},
+  --         loops = {},
+  --         functions = {},
+  --         keywords = {},
+  --         strings = {},
+  --         variables = {},
+  --         numbers = {},
+  --         booleans = {},
+  --         properties = {},
+  --         types = {},
+  --         operators = {},
+  --       },
+  --       custom_highlights = {},
+  --       integrations = {
+  --         cmp = true,
+  --         gitsigns = true,
+  --         nvimtree = true,
+  --         telescope = true,
+  --         notify = false,
+  --         mini = false,
+  --         native_lsp = {
+  --           enabled = true
+  --         }
+  --         -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
+  --       },
+  --     })
+  --     -- setup must be called before loading
+  --     vim.api.nvim_command("colorscheme catppuccin-latte")
+  --   end,
+  -- },
   {
-    'catppuccin/nvim',
-    name = 'catppuccin',
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
     config = function()
-      require("catppuccin").setup({
-        flavour = "macchiato", -- latte, frappe, macchiato, mocha
-        background = {
-          -- :h background
-          light = "latte",
-          dark = "mocha",
-        },
-        transparent_background = false,
-        show_end_of_buffer = false, -- show the '~' characters after the end of buffers
-        term_colors = false,
-        dim_inactive = {
-          enabled = false,
-          shade = "dark",
-          percentage = 0.15,
-        },
-        no_italic = false,    -- Force no italic
-        no_bold = false,      -- Force no bold
-        no_underline = false, -- Force no underline
+      require("tokyonight").setup({
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        style = "moon",         -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
+        light_style = "day",    -- The theme is used when the background is set to light
+        transparent = false,    -- Enable this to disable setting the background color
+        terminal_colors = true, -- Configure the colors used when opening a `:terminal` in [Neovim](https://github.com/neovim/neovim)
         styles = {
-          comments = {},
-          conditionals = {},
-          loops = {},
+          -- Style to be applied to different syntax groups
+          -- Value is any valid attr-list value for `:help nvim_set_hl`
+          comments = { italic = false },
+          keywords = { italic = false },
           functions = {},
-          keywords = {},
-          strings = {},
           variables = {},
-          numbers = {},
-          booleans = {},
-          properties = {},
-          types = {},
-          operators = {},
+          -- Background styles. Can be "dark", "transparent" or "normal"
+          sidebars = "dark",              -- style for sidebars, see below
+          floats = "dark",                -- style for floating windows
         },
-        color_overrides = {},
-        custom_highlights = {},
-        integrations = {
-          cmp = true,
-          gitsigns = true,
-          nvimtree = true,
-          telescope = true,
-          notify = false,
-          mini = false,
-          native_lsp = {
-            enabled = true
-          }
-          -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
-        },
+        sidebars = { "qf", "help" },      -- Set a darker background on sidebar-like windows. For example: `["qf", "vista_kind", "terminal", "packer"]`
+        day_brightness = 0.3,             -- Adjusts the brightness of the colors of the **Day** style. Number between 0 and 1, from dull to vibrant colors
+        hide_inactive_statusline = false, -- Enabling this option, will hide inactive statuslines and replace them with a thin border instead. Should work with the standard **StatusLine** and **LuaLine**.
+        dim_inactive = false,             -- dims inactive windows
+        lualine_bold = false,             -- When `true`, section headers in the lualine theme will be bold
+
+        --- You can override specific color groups to use other groups or a hex color
+        --- function will be called with a ColorScheme table
+        ---@param colors ColorScheme
+        on_colors = function(colors) end,
+
+        --- You can override specific highlights to use other groups or a hex color
+        --- function will be called with a Highlights and ColorScheme table
+        ---@param highlights Highlights
+        ---@param colors ColorScheme
+        on_highlights = function(highlights, colors) end,
       })
-      -- setup must be called before loading
-      vim.cmd.colorscheme "catppuccin"
-    end
+      vim.cmd([[colorscheme tokyonight]])
+    end,
   },
 
   {
@@ -356,8 +401,7 @@ vim.keymap.set('n', '<leader>tp', ':tabp<CR>')     -- go to previous tab
 -- Remap for dealing with word wrap
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
--- Delete but not copy into register
-vim.keymap.set('n', 'x', '"_x')
+
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
