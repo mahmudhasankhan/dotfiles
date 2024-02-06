@@ -1,11 +1,9 @@
 # Mahmud's dotfiles
 
-## Contents
+## Table of Contents
 
-- [Mahmud's dotfiles](#mahmuds-dotfiles)
-  - [Contents](#contents)
-  - [Powershell](#powershell)
-  - [Neovim](#neovim)
+- [Powershell](#powershell)
+- [Neovim](#neovim)
 
 **Warning:** Don't blindly use my settings unless you know what that entails. Use at your own risk!
 
@@ -55,3 +53,6 @@ This should install neovim and gcc compiler in your machine. As a prerequisite, 
 Now, for windows you need to copy the [nvim](https://github.com/mahmudhasankhan/dotfiles/tree/master/.config/nvim) folder to your `C:\Users\username\AppData\Local\`. 
 
 Finally, run nvim from your terminal and neovim will do the rest.
+
+
+[def]: #mahmuds-dotfiles
