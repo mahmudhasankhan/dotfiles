@@ -56,7 +56,11 @@ All done!
 
  Install neovim and gcc with scoop.
 
-> scoop install neovim gcc
+
+```
+scoop install neovim gcc
+
+```
 
 This should install neovim and gcc compiler in your machine. As a prerequisite, you need to have git installed in your machine. 
 Now, for windows you need to copy the [nvim](https://github.com/mahmudhasankhan/dotfiles/tree/master/.config/nvim) folder to your `C:\Users\username\AppData\Local\`. 
