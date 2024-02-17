@@ -147,6 +147,13 @@ require('lazy').setup({
     },
   },
 
+  { -- MarkdownPreview
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    ft = { "markdown" },
+    build = function() vim.fn["mkdp#util#install"]() end,
+  },
+
   -- {
   --   'catppuccin/nvim',
   --   lazy = false,
