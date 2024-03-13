@@ -19,6 +19,7 @@ Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+f' -PSReadlineChordReverseHistory
 # #Alias
 Set-Alias g git
 Set-Alias vim nvim
+Set-Alias -Name lg -Value lazygit
 Set-Alias tig 'C:\Program Files\Git\usr\bin\tig.exe'
 # Set-Alias less 'C:\Program Files\Git\usr\bin\less.exe'
 

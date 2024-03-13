@@ -4,6 +4,7 @@
 
 - [Powershell](#powershell)
 - [Neovim](#neovim)
+- [Lazygit](#lazygit)
 
 **Warning:** Don't blindly use my settings unless you know what that entails. Use at your own risk!
 
@@ -67,3 +68,18 @@ Now, for windows you need to copy the [nvim](https://github.com/mahmudhasankhan/
 
 Finally, run nvim from your terminal and neovim will do the rest.
 
+## Lazygit
+
+Install lazygit with scoop.
+
+```
+# Add the extras bucket
+scoop bucket add extras
+
+# Install lazygit
+scoop install lazygit
+```
+You can customize your lazygit profiles by configuring the config.yml file. We will dive into that later.
+Well now you can use lazygit by simply cd'ing into any git initialized folder and run `lazygit`.
+
+For more information about lazygit check out their [github](https://github.com/jesseduffield/lazygit).
